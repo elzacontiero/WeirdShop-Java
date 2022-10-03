@@ -15,13 +15,16 @@ class WeirdShop {
     private void incQuality(int i ) {
         items[i].quality = items[i].quality + 1;
     }
+    private void decQuality(int i ) {
+        items[i].quality = items[i].quality -1;
+    }
 
     void updateQuality() {
         for (int i = 0; i < items.length; i++) {
             if (!eq("Aged Brie", i)
                     && !eq("Backstage Pass",i)) {
                 if (items[i].quality > 0 && (!eq("Gold Coin", i)) ) {
-                        items[i].quality = items[i].quality - 1;
+                        decQuality(i);
                 }
             } else {
                 if (items[i].quality < 50) {
