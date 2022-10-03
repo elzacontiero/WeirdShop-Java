@@ -7,12 +7,17 @@ class WeirdShop {
         this.items = items;
     }
 
+    // Method to simplify calls to items[i].name.equals(name)
+    private boolean eq(String name, int i) {
+        return items[i].name.equals(name);
+    }
+
     void updateQuality() {
         for (int i = 0; i < items.length; i++) {
-            if (!items[i].name.equals("Aged Brie")
-                    && !items[i].name.equals("Backstage Pass")) {
+            if (!eq("Aged Brie", i)
+                    && !eq("Backstage Pass",i)) {
                 if (items[i].quality > 0) {
-                    if (!items[i].name.equals("Gold Coin")) {
+                    if (!eq("Gold Coin", i)) {
                         items[i].quality = items[i].quality - 1;
                     }
                 }
@@ -20,7 +25,7 @@ class WeirdShop {
                 if (items[i].quality < 50) {
                     items[i].quality = items[i].quality + 1;
 
-                    if (items[i].name.equals("Backstage Pass")) {
+                    if (eq("Backstage Pass",i)) {
                         if (items[i].sellIn < 12) {
                             if (items[i].quality < 50) {
                                 items[i].quality = items[i].quality + 1;
@@ -36,15 +41,15 @@ class WeirdShop {
                 }
             }
 
-            if (!items[i].name.equals("Gold Coin")) {
+            if (!eq("Gold Coin",i)) {
                 items[i].sellIn = items[i].sellIn - 1;
             }
 
             if (items[i].sellIn < 0) {
-                if (!items[i].name.equals("Aged Brie")) {
-                    if (!items[i].name.equals("Backstage Pass")) {
+                if (!eq("Aged Brie",i)) {
+                    if (!eq("Backstage Pass",i)) {
                         if (items[i].quality > 0) {
-                            if (!items[i].name.equals("Gold Coin")) {
+                            if (!eq("Gold Coin",i)) {
                                 items[i].quality = items[i].quality - 1;
                             }
                         }
