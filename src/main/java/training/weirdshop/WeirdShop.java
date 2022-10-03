@@ -22,10 +22,8 @@ class WeirdShop {
 
     void updateQuality() {
         for (int i = 0; i < items.length; i++) {
-            if (!eq("Aged Brie", i)  && !eq("Backstage Pass", i)) {
-                if (items[i].quality > 0 && (!eq("Gold Coin", i))) {
+            if (!eq("Aged Brie", i)  && !eq("Backstage Pass", i) &&  (items[i].quality > 0 && (!eq("Gold Coin", i)))) {
                     decQuality(i);
-                }
             }
             // It is always possible to transform an 'else' into an 'if': just flip the logic in the original if to the second.
             if (eq("Aged Brie", i) || eq("Backstage Pass", i)) {
