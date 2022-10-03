@@ -30,7 +30,7 @@ class WeirdShop {
                 if (items[i].quality < 50) {
                     incQuality(i);
 
-                    if (eq("Backstage Pass", i) && (items[i].quality < 50)) {
+                    if (eq("Backstage Pass", i)) {
                         if (items[i].sellIn < 12) {
                             incQuality(i);
                         }
