@@ -28,12 +28,10 @@ class WeirdShop {
                                 items[i].quality = items[i].quality + 1;
                         }
 
-                        if (items[i].sellIn < 7) {
-                            if (items[i].quality < 50) {
+                        if (items[i].sellIn < 7 && (items[i].quality < 50)) {
                                 items[i].quality = items[i].quality + 1;
                             }
                         }
-                    }
                 }
             }
 
