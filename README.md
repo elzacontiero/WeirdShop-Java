@@ -29,6 +29,6 @@ Link: https://corndel.atlassian.net/wiki/spaces/AC/pages/22839444/7+-+Weird+Shop
    - increases in Quality as sell-by date approaches
    - It increases by 2 when there are 10 days or less.
    - It increases by 3 when there are 5 days or less.
-   - It decreases, dropping to O after the concert.
+   - It decreases, dropping to 'zero' after the concert.
 
      

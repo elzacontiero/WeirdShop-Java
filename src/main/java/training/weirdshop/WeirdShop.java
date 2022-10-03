@@ -26,7 +26,9 @@ class WeirdShop {
                 if (items[i].quality > 0 && (!eq("Gold Coin", i))) {
                     decQuality(i);
                 }
-            } else {
+            }
+            // It is always possible to transform an 'else' into an 'if': just flip the logic in the original if to the second.
+            if (eq("Aged Brie", i) || eq("Backstage Pass", i)) {
                 if (items[i].quality < 50) {
                     incQuality(i);
 
