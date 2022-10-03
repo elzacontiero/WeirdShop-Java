@@ -22,8 +22,7 @@ class WeirdShop {
 
     void updateQuality() {
         for (int i = 0; i < items.length; i++) {
-            if (!eq("Aged Brie", i)
-                    && !eq("Backstage Pass", i)) {
+            if (!eq("Aged Brie", i)  && !eq("Backstage Pass", i)) {
                 if (items[i].quality > 0 && (!eq("Gold Coin", i))) {
                     decQuality(i);
                 }
@@ -31,12 +30,12 @@ class WeirdShop {
                 if (items[i].quality < 50) {
                     incQuality(i);
 
-                    if (eq("Backstage Pass", i)) {
-                        if (items[i].sellIn < 12 && (items[i].quality < 50)) {
+                    if (eq("Backstage Pass", i) && (items[i].quality < 50)) {
+                        if (items[i].sellIn < 12) {
                             incQuality(i);
                         }
 
-                        if (items[i].sellIn < 7 && (items[i].quality < 50)) {
+                        if (items[i].sellIn < 7) {
                             incQuality(i);
                         }
                     }
