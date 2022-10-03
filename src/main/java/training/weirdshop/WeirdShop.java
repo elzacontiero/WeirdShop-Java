@@ -12,44 +12,45 @@ class WeirdShop {
         return items[i].name.equals(name);
     }
 
-    private void incQuality(int i ) {
+    private void incQuality(int i) {
         items[i].quality = items[i].quality + 1;
     }
-    private void decQuality(int i ) {
-        items[i].quality = items[i].quality -1;
+
+    private void decQuality(int i) {
+        items[i].quality = items[i].quality - 1;
     }
 
     void updateQuality() {
         for (int i = 0; i < items.length; i++) {
             if (!eq("Aged Brie", i)
-                    && !eq("Backstage Pass",i)) {
-                if (items[i].quality > 0 && (!eq("Gold Coin", i)) ) {
-                        decQuality(i);
+                    && !eq("Backstage Pass", i)) {
+                if (items[i].quality > 0 && (!eq("Gold Coin", i))) {
+                    decQuality(i);
                 }
             } else {
                 if (items[i].quality < 50) {
                     incQuality(i);
 
-                    if (eq("Backstage Pass",i)) {
-                        if (items[i].sellIn < 12 && (items[i].quality <50))  {
+                    if (eq("Backstage Pass", i)) {
+                        if (items[i].sellIn < 12 && (items[i].quality < 50)) {
                             incQuality(i);
                         }
 
                         if (items[i].sellIn < 7 && (items[i].quality < 50)) {
                             incQuality(i);
-                            }
                         }
+                    }
                 }
             }
 
-            if (!eq("Gold Coin",i)) {
+            if (!eq("Gold Coin", i)) {
                 items[i].sellIn = items[i].sellIn - 1;
             }
 
             if (items[i].sellIn < 0) {
-                if (!eq("Aged Brie",i)) {
-                    if (!eq("Backstage Pass",i)) {
-                        if (items[i].quality > 0 && !eq("Gold Coin",i)) {
+                if (!eq("Aged Brie", i)) {
+                    if (!eq("Backstage Pass", i)) {
+                        if (items[i].quality > 0 && !eq("Gold Coin", i)) {
                             decQuality(i);
                         }
 
@@ -58,7 +59,7 @@ class WeirdShop {
                     }
                 } else {
                     if (items[i].quality < 50) {
-                        incQuality(i);;
+                        incQuality(i);
                     }
                 }
             }
