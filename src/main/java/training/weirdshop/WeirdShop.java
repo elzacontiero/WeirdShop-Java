@@ -16,10 +16,8 @@ class WeirdShop {
         for (int i = 0; i < items.length; i++) {
             if (!eq("Aged Brie", i)
                     && !eq("Backstage Pass",i)) {
-                if (items[i].quality > 0) {
-                    if (!eq("Gold Coin", i)) {
+                if (items[i].quality > 0 && (!eq("Gold Coin", i)) ) {
                         items[i].quality = items[i].quality - 1;
-                    }
                 }
             } else {
                 if (items[i].quality < 50) {
