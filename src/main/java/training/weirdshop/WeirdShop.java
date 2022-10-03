@@ -12,6 +12,11 @@ class WeirdShop {
         return items[i].name.equals(name);
     }
 
+    private void incQuality(int i ) {
+        items[i].quality = items[i].quality + 1;
+    }
+
+
     void updateQuality() {
         for (int i = 0; i < items.length; i++) {
             if (!eq("Aged Brie", i)
@@ -21,7 +26,7 @@ class WeirdShop {
                 }
             } else {
                 if (items[i].quality < 50) {
-                    items[i].quality = items[i].quality + 1;
+                    incQuality(i);
 
                     if (eq("Backstage Pass",i)) {
                         if (items[i].sellIn < 12 && (items[i].quality <50))  {
