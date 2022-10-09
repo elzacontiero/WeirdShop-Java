@@ -46,14 +46,15 @@ class WeirdShop {
                 items[i].sellIn = items[i].sellIn - 1;
             }
 
+            if (items[i].sellIn < 0 && eq("Some other item", i) && items[i].quality > 0)
+                decQuality(i); // 'Some other item'
+
             if (items[i].sellIn < 0) {
                 if (!eq("Aged Brie", i)) {
                     if (!eq("Backstage Pass", i)) {
-                        if (items[i].quality > 0 && !eq("Gold Coin", i)) {
-                            decQuality(i);
-                        }
-
+                        // true
                     } else {
+                        // false
                         items[i].quality = items[i].quality - items[i].quality;
                     }
                 } else {
