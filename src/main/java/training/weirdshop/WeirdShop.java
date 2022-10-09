@@ -50,10 +50,8 @@ class WeirdShop {
                 decQuality(i); // 'Some other item'
 
             if (items[i].sellIn < 0) {
-                if (!eq("Aged Brie", i)) {
-                    if (eq("Backstage Pass", i)) {
-                        items[i].quality = items[i].quality - items[i].quality;
-                    }
+                if (!eq("Aged Brie", i) && eq("Backstage Pass", i)) {
+                    items[i].quality = items[i].quality - items[i].quality;
                 }
                 if (eq("Aged Brie", i)) {
                     if (items[i].quality < 50) {
