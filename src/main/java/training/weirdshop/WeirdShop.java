@@ -54,7 +54,8 @@ class WeirdShop {
                     if (eq("Backstage Pass", i)) {
                         items[i].quality = items[i].quality - items[i].quality;
                     }
-                } else {
+                }
+                if (eq("Aged Brie", i)) {
                     if (items[i].quality < 50) {
                         incQuality(i);
                     }
